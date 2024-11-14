@@ -26,6 +26,7 @@ class BaseEncoder(torch.nn.Module): #, ABC):
         if model_name == 'Salesforce/codet5p-110m-embedding':
             self.encoder = AutoModel.from_pretrained(model_name, trust_remote_code=True).to(device).eval() 
         else:
+            # self.encoder = AutoModel.from_pretrained(model_name, use_auth_token=True).to(device).eval()
             self.encoder = AutoModel.from_pretrained(model_name, use_auth_token=True).to(device).eval()
         self.device = device
         self.max_input_len = max_input_len

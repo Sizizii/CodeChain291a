@@ -25,7 +25,8 @@ else:
     device = "cpu"
     
 model_mapping = {"gpt3.5": "gpt-3.5-turbo-16k", 
-                "gpt4": "gpt-4"}
+                "gpt4": "gpt-4",
+                "gpt4omini": "gpt-4o-mini"}
 
 API_KEY_FILE = 'openaiapikey.txt'
 with open(API_KEY_FILE, 'r', encoding='utf-8') as infile:
@@ -34,7 +35,7 @@ if not openai.api_key:
     print("Could not find API key value at {}".format(API_KEY_FILE))
     sys.exit(1)
 
-if args.split is not None and args.split == 'mini_val':
+if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset'):
     apps = load_from_disk(f'data/{args.split}')
     apps_problem_ls = []
     for level in ['introductory', 'interview', 'competition']:
@@ -59,7 +60,7 @@ if args.modules_file is not None:
 
 lens = [] 
 for idx in tqdm(range(args.start, args.end), total=args.end-args.start): 
-    if args.split is not None and args.split == 'mini_val':
+    if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset'):
         problem = apps_problem_ls[idx]
     else:
         problem = apps[idx]
@@ -110,7 +111,7 @@ for idx in tqdm(range(args.start, args.end), total=args.end-args.start):
     for i in tqdm(range(num_loops), leave=False):
         while time.time() - start < 80:     
             try: 
-                response = openai.ChatCompletion.create(
+                response = openai.chat.completions.create(
                   model=model_mapping[args.model], 
                   messages=[
                         {"role": "system", 
@@ -149,11 +150,11 @@ for idx in tqdm(range(args.start, args.end), total=args.end-args.start):
         continue 
         
     if args.num_gen_samples == 1:
-        result = response.choices[0].message['content']
+        result = response.choices[0].message.content
     else:
-        result = []
+        result = [] 
         for response in responses:
-            result += [choice.message['content'] for choice in response.choices]
+            result += [choice.message.content for choice in response.choices]
     
     curr_output = {} 
     curr_output['prompt'] = curr_prompt 

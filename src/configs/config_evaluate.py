@@ -8,7 +8,7 @@ def parse_args():
     
     parser.add_argument(
         "--eval_split",
-        choices=['mini_val', 'test'],
+        choices=['mini_val', 'test', 'test_subset'],
         default='mini_val',
         help="Which split to evaluate in APPS",
     )

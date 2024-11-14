@@ -188,10 +188,11 @@ def get_dataset(
 
 
 def prepare_tokenizer(tokenizer_path):
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
-    except OSError:
-        tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_auth_token=True)
+    # try:
+    #     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_auth_token=True)
+    # except OSError:
+    #     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_auth_token=True)
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_auth_token=True)
 
     tokenizer.add_special_tokens({"pad_token": PAD_TOKEN})
     tokenizer.add_special_tokens({"sep_token": SEPARATOR_TOKEN})
