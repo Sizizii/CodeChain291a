@@ -1,5 +1,5 @@
-split=test # test OR mini_val
-model=gpt3.5 # gpt3.5 or gpt4 
+split=mini_val # test OR mini_val
+model=wizard_coder
 start=0
 end=10 
 num_gen_samples=20
@@ -13,7 +13,8 @@ exp_name=${model}_${split}
 output_path=outputs/${exp_name}_$round
 num_clusters=5
 
-# Generate code 
+
+# Generate code
 python src/generate.py --output_path $output_path --prompt_file $prompt --split $split --model $model --start $start --end $end --num_gen_samples $num_gen_samples 
 
 # Test by example test cases 
