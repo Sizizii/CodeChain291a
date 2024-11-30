@@ -94,7 +94,7 @@ for level, new_subset_data in processed_val_dataset.items():
     for example in processed_val_dataset[level]:
         pass_results_all[example['problem_id']] = {'result': example['gpt_pass_flags'], 'file': example['gen_file']}
     
-    pass_at_ks = compute_pass_at_ks(pass_results, ks=[1]) 
+    pass_at_ks = compute_pass_at_ks(pass_results, ks=[1, 5]) 
    
     cost = sum([dp['gpt_cost'] if 'gpt_cost' in dp else 0 for dp in processed_val_dataset[level]])
     res_str = f"Difficulty level: {level}, pass@k: {pass_at_ks}, num of examples: {len(pass_results)}, total_cost: {cost}"

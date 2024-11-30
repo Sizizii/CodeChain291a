@@ -1,0 +1,2 @@
+#set up wizard_coder service
+python3 -m vllm.entrypoints.openai.api_server --model TheBloke/WizardCoder-Python-13B-V1.0-AWQ --quantization awq --port 8082  --dtype auto --api-key token-abc123 --max-model-len 4096 --chat_template ./template_llava.jinja

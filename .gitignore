@@ -1,1 +1,5 @@
 openaiapikey.txt
+data/
+outputs/
+*.pyc
+codechain/

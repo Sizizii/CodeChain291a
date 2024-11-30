@@ -1,4 +1,4 @@
-split=test # test OR mini_val
+split=test # test OR mini_val OR test250
 model=gpt3.5 # gpt3.5 or gpt4 
 start=0
 end=10

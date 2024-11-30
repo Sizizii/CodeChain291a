@@ -23,10 +23,13 @@ if torch.cuda.is_available():
     device = "cuda"
 else:
     device = "cpu"
+
+client = openai.OpenAI(base_url='http://localhost:8082/v1', api_key='token-abc123')
     
 model_mapping = {"gpt3.5": "gpt-3.5-turbo-16k", 
                 "gpt4": "gpt-4",
-                "gpt4omini": "gpt-4o-mini"}
+                "gpt4omini": "gpt-4o-mini",
+                "wizard_coder13B": "TheBloke/WizardCoder-Python-13B-V1.0-AWQ"}
 
 API_KEY_FILE = 'openaiapikey.txt'
 with open(API_KEY_FILE, 'r', encoding='utf-8') as infile:
@@ -35,7 +38,7 @@ if not openai.api_key:
     print("Could not find API key value at {}".format(API_KEY_FILE))
     sys.exit(1)
 
-if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset'):
+if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset' or args.split=='test_60'):
     apps = load_from_disk(f'data/{args.split}')
     apps_problem_ls = []
     for level in ['introductory', 'interview', 'competition']:
@@ -60,7 +63,7 @@ if args.modules_file is not None:
 
 lens = [] 
 for idx in tqdm(range(args.start, args.end), total=args.end-args.start): 
-    if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset'):
+    if args.split is not None and (args.split == 'mini_val' or args.split == 'test_subset' or args.split == 'test_60'):
         problem = apps_problem_ls[idx]
     else:
         problem = apps[idx]
@@ -106,12 +109,27 @@ for idx in tqdm(range(args.start, args.end), total=args.end-args.start):
     if args.num_gen_samples==1:
         num_loops = 1 
     else:
-        num_loops = int(args.num_gen_samples/5)
+        num_loops = int(args.num_gen_samples/1)
+
+    def format_messages(messages):
+      """
+      Formats the chat messages into a string suitable for the model.
+      """
+      prompt = ""
+      for msg in messages:
+          if msg["role"] == "system":
+              prompt += f"System: {msg['content']}\n"
+          elif msg["role"] == "user":
+              prompt += f"User: {msg['content']}\n"
+          elif msg["role"] == "assistant":
+              prompt += f"Assistant: {msg['content']}\n"
+      prompt += "Assistant: "  # Add this to indicate the model should continue as the assistant.
+      return prompt
     
     for i in tqdm(range(num_loops), leave=False):
         while time.time() - start < 80:     
             try: 
-                response = openai.chat.completions.create(
+                response = client.chat.completions.create(
                   model=model_mapping[args.model], 
                   messages=[
                         {"role": "system", 
@@ -119,26 +137,31 @@ for idx in tqdm(range(args.start, args.end), total=args.end-args.start):
                         {"role": "user", 
                          "content": curr_prompt}
                     ],
-                  n=5 if args.num_gen_samples > 1 else 1,
+                  # prompt = format_messages([ {"role": "system", 
+                  #        "content": "You are a helpful AI assistant to help developers to solve challenging coding problems."},
+                  #       {"role": "user", 
+                  #        "content": curr_prompt}]),
+                  n=1 if args.num_gen_samples > 1 else 1,
+                  temperature=0.6,
                 )
                 success = True 
                 responses.append(response)
                 break 
-            except openai.error.InvalidRequestError as e:
+            except client.error.InvalidRequestError as e:
                 print(
                     f"Invalid request error: {e}"
                 )
                 time.sleep(10)
                 continue 
 
-            except openai.error.RateLimitError as e:
+            except client.error.RateLimitError as e:
                 print(
                     f"Rate limit error: {e}"
                 )
                 time.sleep(10)
                 continue 
 
-            except openai.error.APIError as e: 
+            except client.error.APIError as e: 
                 print(
                     f"HTTP code 502 API error: {e}"
                 )

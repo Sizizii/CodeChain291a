@@ -1,7 +1,7 @@
-split=test_subset # test OR mini_val OR test_subset
-model=gpt4omini # gpt3.5 or gpt4 or gpt4o
-start=17
-end=20 # should be 20 for test subset
+split=test_60 # test OR mini_val OR test_subset OR test250
+model=wizard_coder13B # gpt3.5 or gpt4 or gpt4o or wizard_coder33B
+start=0
+end=60 # should be 20 for test subset
 num_gen_samples=20
 start_round=1
 end_round=5

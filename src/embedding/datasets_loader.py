@@ -6,7 +6,7 @@ import datasets
 # Workaround toolkit misreporting available disk space.
 datasets.builder.has_sufficient_disk_space = lambda needed_bytes, directory=".": True
 from datasets import load_dataset, load_from_disk
-from datasets.builder import DatasetBuildError
+# from datasets.builder import DatasetBuildError
 from transformers import AutoTokenizer
 from embedding.preprocessing_utils import (
     perturb_tokens,
@@ -138,18 +138,35 @@ def get_dataset(
             cache_dir=path_to_cache,
             split=split,
         )
-    except DatasetBuildError:
-        # Try to specify data files. Specific for The Stack.
-        base_dataset = load_dataset(
-            dataset_name,
-            use_auth_token=True,
-            cache_dir=path_to_cache,
-            data_files="sample.parquet",
-            split=split,
-        )
-    except FileNotFoundError:
-        # Try to load from disk if above failed.
-        base_dataset = load_from_disk(path_to_cache)
+    # except DatasetBuildError:
+    #     # Try to specify data files. Specific for The Stack.
+    #     base_dataset = load_dataset(
+    #         dataset_name,
+    #         use_auth_token=True,
+    #         cache_dir=path_to_cache,
+    #         data_files="sample.parquet",
+    #         split=split,
+    #     )
+    # except FileNotFoundError:
+    #     # Try to load from disk if above failed.
+    #     base_dataset = load_from_disk(path_to_cache)
+    except Exception as e:
+      # Handle general dataset loading issues
+      if "DatasetBuildError" in str(e):
+          # Fallback for The Stack with specific data files
+          base_dataset = load_dataset(
+              dataset_name,
+              use_auth_token=True,
+              cache_dir=path_to_cache,
+              data_files="sample.parquet",
+              split=split,
+          )
+      elif isinstance(e, FileNotFoundError):
+          # Fallback to loading dataset from disk
+          base_dataset = load_from_disk(path_to_cache)
+      else:
+          # Re-raise any other exceptions for debugging
+          raise e
 
     if force_preprocess:
         base_dataset.cleanup_cache_files()
