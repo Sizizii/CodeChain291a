@@ -1,0 +1,28 @@
+,file,func,func_code
+0,outputs/wizard_coder13B_test_subset_round1/4333.json,No docstring,"def restore_square_vertices(x1, y1, x2, y2):
+    x3 = y3 = x4 = y4 = 0
+    if x1 == x2 and y1 == y2:
+        return -1, -1, -1, -1
+
+    x3 = x1 + (x2 - x1)
+    y3 = y1 + (y2 - y1)
+    x4 = x1 - (y2 - y1)
+    y4 = y1 + (x2 - x1)
+    return x3, y3, x4, y4"
+1,outputs/wizard_coder13B_test_subset_round0/4704.json,"
+def min_difference(cards):
+    """"""
+    Description: This function finds the minimum difference between the sum of cards taken by Snuke and Raccoon.
+    Input:
+    cards (list): A list of integers representing the cards in the heap.
+    Output:
+    diff (int): The minimum difference between the sum of cards taken by Snuke and Raccoon.
+    """"""
+","def min_difference(cards):
+    """"""
+    Description: This function finds the minimum difference between the sum of cards taken by Snuke and Raccoon.
+    Input:
+    cards (list): A list of integers representing the cards in the heap.
+    Output:
+    diff (int): The minimum difference between the sum of cards taken by Snuke and Raccoon.
+    """""""

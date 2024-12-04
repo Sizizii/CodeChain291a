@@ -1,0 +1,530 @@
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': None,
+ 'num_clusters': 1,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round0',
+ 'prompt_file': 'prompts/codechain_gen.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 129254.36it/s]
+num_proc must be <= 14. Reducing num_proc to 14 for dataset of size 14.
+{'eval_split': 'test_subset',
+ 'example_test_path': 'data/test_example_tests.pkl',
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_round0',
+ 'save_results_path': 'outputs/wizard_coder13B_test_subset_round0_results_exampletests.json'}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 14
+    })
+    interview: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 3
+    })
+    competition: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 3
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=14):   0%|                                                                                                                                                                                                                                                                  | 0/14 [00:00<?, ? examples/s]Map (num_proc=14):   7%|█████████████████▊                                                                                                                                                                                                                                        | 1/14 [00:00<00:03,  3.84 examples/s]Map (num_proc=14):  29%|███████████████████████████████████████████████████████████████████████▍                                                                                                                                                                                  | 4/14 [00:00<00:00, 12.00 examples/s]Map (num_proc=14):  57%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                                           | 8/14 [00:00<00:00, 19.94 examples/s]Map (num_proc=14):  79%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                     | 11/14 [00:00<00:00, 21.29 examples/s]Map (num_proc=14): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:04<00:00,  2.10 examples/s]Map (num_proc=14): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 14/14 [00:04<00:00,  3.16 examples/s]
+num_proc must be <= 3. Reducing num_proc to 3 for dataset of size 3.
+Difficulty level: introductory, pass@k: {1: 0.036281179138321996, 5: 0.6275510204081632}, num of examples: 14, total_cost: 0
+Map (num_proc=3):   0%|                                                                                                                                                                                                                                                                    | 0/3 [00:00<?, ? examples/s]Map (num_proc=3):  33%|████████████████████████████████████████████████████████████████████████████████████                                                                                                                                                                        | 1/3 [00:00<00:00,  3.65 examples/s]Map (num_proc=3):  67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                    | 2/3 [00:00<00:00,  5.44 examples/s]Map (num_proc=3): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00,  5.88 examples/s]
+num_proc must be <= 3. Reducing num_proc to 3 for dataset of size 3.
+Difficulty level: interview, pass@k: {1: 0.0, 5: 0.3333333333333333}, num of examples: 3, total_cost: 0
+Map (num_proc=3):   0%|                                                                                                                                                                                                                                                                    | 0/3 [00:00<?, ? examples/s]Map (num_proc=3):  33%|████████████████████████████████████████████████████████████████████████████████████                                                                                                                                                                        | 1/3 [00:00<00:00,  3.34 examples/s]Map (num_proc=3): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00<00:00,  6.62 examples/s]
+Difficulty level: competition, pass@k: {1: 0.0, 5: 0.3333333333333333}, num of examples: 3, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.036281179138321996, 5: 0.6275510204081632}, num of examples: 14, total_cost: 0
+Difficulty level: interview, pass@k: {1: 0.0, 5: 0.3333333333333333}, num of examples: 3, total_cost: 0
+Difficulty level: competition, pass@k: {1: 0.0, 5: 0.3333333333333333}, num of examples: 3, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=20, minmax=(3, 9), mean=5.0, variance=2.631578947368421, skewness=0.9107359661284933, kurtosis=0.2799999999999998)
+pass@1 0.036281179138321996 0.0 0.0
+pass@5 0.6275510204081632 0.3333333333333333 0.3333333333333333
+{'output_file': 'outputs/wizard_coder13B_test_subset_round0_data.csv',
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round0',
+ 'past_result_path': None,
+ 'result_path': 'outputs/wizard_coder13B_test_subset_round0_results_exampletests.json'}
+Number of data files: 20
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 5147.96it/s]
+Number of generation samples: 
+DescribeResult(nobs=20, minmax=(0, 2), mean=0.2, variance=0.37894736842105264, skewness=2.666666666666668, kurtosis=5.111111111111111)
+Counter({0: 18, 2: 2})
+
+Average func per problem: 0.1
+DescribeResult(nobs=20, minmax=(0, 1), mean=0.1, variance=0.09473684210526316, skewness=2.666666666666668, kurtosis=5.111111111111111)
+Counter({0: 18, 1: 2})
+Saving processed data to outputs/wizard_coder13B_test_subset_round0_data.csv
+Clustering N_CLUSTERS: 5
+{'data_path': 'outputs/wizard_coder13B_test_subset_round0_data.csv',
+ 'embedding_model': 'starencoder',
+ 'n_clusters': 5,
+ 'output_embed_file': 'outputs/wizard_coder13B_test_subset_round0_embeds.npy',
+ 'output_file': 'outputs/wizard_coder13B_test_subset_round0_5clusters.csv'}
+Loading embedding from outputs/wizard_coder13B_test_subset_round0_embeds.npy
+Embedding of shape (2, 768)
+Clustering...
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 63.99it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:67: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(num_funcs))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:76: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(all_num_clusters))
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:80: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(list(freqs.values())))
+Number of functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+
+number of set clusters:
+Counter({5: 2})
+DescribeResult(nobs=2, minmax=(5, 5), mean=5.0, variance=0.0, skewness=nan, kurtosis=nan)
+Number of util functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+REVISION ROUND 1
+MODULE FILE outputs/wizard_coder13B_test_subset_round0_5clusters.csv
+OUTPUT PATH: outputs/wizard_coder13B_test_subset_round1
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils.py:228: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(lens))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': 'outputs/wizard_coder13B_test_subset_round0_5clusters.csv',
+ 'num_clusters': 5,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round1',
+ 'prompt_file': 'prompts/codechain_revise.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+Distribution of number of utils:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Util functions for 2 problems
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 60349.70it/s]
+num_proc must be <= 2. Reducing num_proc to 2 for dataset of size 2.
+{'eval_split': 'test_subset',
+ 'example_test_path': 'data/test_example_tests.pkl',
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_round1',
+ 'save_results_path': 'outputs/wizard_coder13B_test_subset_round1_results_exampletests.json'}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 2
+    })
+    interview: Dataset({
+        features: [],
+        num_rows: 0
+    })
+    competition: Dataset({
+        features: [],
+        num_rows: 0
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=2):   0%|                                                                                                                                                                                                                                                                    | 0/2 [00:00<?, ? examples/s]Map (num_proc=2):  50%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                              | 1/2 [00:00<00:00,  3.27 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  4.66 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.68 examples/s]
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils_evaluate.py:128: RuntimeWarning: Mean of empty slice.
+  ).mean()
+/root/miniconda3/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Difficulty level: introductory, pass@k: {1: 0.08333333333333331, 5: 0.9166666666666667}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.08333333333333331, 5: 0.9166666666666667}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=2, minmax=(4, 6), mean=5.0, variance=2.0, skewness=0.0, kurtosis=-2.0)
+pass@1 0.08333333333333331 nan nan
+pass@5 0.9166666666666667 nan nan
+{'output_file': 'outputs/wizard_coder13B_test_subset_round1_data.csv',
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round1',
+ 'past_result_path': 'outputs/wizard_coder13B_test_subset_round0_data.csv_all_results.json',
+ 'result_path': 'outputs/wizard_coder13B_test_subset_round1_results_exampletests.json'}
+Number of data files: 2
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 1138.36it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/processing.py:103: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(functions_per_problem))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+Number of generation samples: 
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+Counter({1: 1, 2: 1})
+
+Average func per problem: 1.0
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Saving processed data to outputs/wizard_coder13B_test_subset_round1_data.csv
+Clustering N_CLUSTERS: 4
+{'data_path': 'outputs/wizard_coder13B_test_subset_round1_data.csv',
+ 'embedding_model': 'starencoder',
+ 'n_clusters': 4,
+ 'output_embed_file': 'outputs/wizard_coder13B_test_subset_round1_embeds.npy',
+ 'output_file': 'outputs/wizard_coder13B_test_subset_round1_4clusters.csv'}
+Loading embedding from outputs/wizard_coder13B_test_subset_round1_embeds.npy
+Embedding of shape (2, 768)
+Clustering...
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 66.33it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:67: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(num_funcs))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:76: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(all_num_clusters))
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:80: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(list(freqs.values())))
+Number of functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+
+number of set clusters:
+Counter({4: 2})
+DescribeResult(nobs=2, minmax=(4, 4), mean=4.0, variance=0.0, skewness=nan, kurtosis=nan)
+Number of util functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+REVISION ROUND 2
+MODULE FILE outputs/wizard_coder13B_test_subset_round1_4clusters.csv
+OUTPUT PATH: outputs/wizard_coder13B_test_subset_round2
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils.py:228: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(lens))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': 'outputs/wizard_coder13B_test_subset_round1_4clusters.csv',
+ 'num_clusters': 4,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round2',
+ 'prompt_file': 'prompts/codechain_revise.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+Distribution of number of utils:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Util functions for 2 problems
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 58254.22it/s]
+num_proc must be <= 2. Reducing num_proc to 2 for dataset of size 2.
+{'eval_split': 'test_subset',
+ 'example_test_path': 'data/test_example_tests.pkl',
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_round2',
+ 'save_results_path': 'outputs/wizard_coder13B_test_subset_round2_results_exampletests.json'}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 2
+    })
+    interview: Dataset({
+        features: [],
+        num_rows: 0
+    })
+    competition: Dataset({
+        features: [],
+        num_rows: 0
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=2):   0%|                                                                                                                                                                                                                                                                    | 0/2 [00:00<?, ? examples/s]Map (num_proc=2):  50%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                              | 1/2 [00:00<00:00,  2.46 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  4.40 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  3.39 examples/s]
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils_evaluate.py:128: RuntimeWarning: Mean of empty slice.
+  ).mean()
+/root/miniconda3/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Difficulty level: introductory, pass@k: {1: 0.09999999999999998, 5: 0.5}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.09999999999999998, 5: 0.5}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=2, minmax=(5, 6), mean=5.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+pass@1 0.09999999999999998 nan nan
+pass@5 0.5 nan nan
+{'output_file': 'outputs/wizard_coder13B_test_subset_round2_data.csv',
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round2',
+ 'past_result_path': 'outputs/wizard_coder13B_test_subset_round1_data.csv_all_results.json',
+ 'result_path': 'outputs/wizard_coder13B_test_subset_round2_results_exampletests.json'}
+Number of data files: 2
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 1144.11it/s]
+Number of generation samples: 
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+Counter({1: 1, 2: 1})
+
+Average func per problem: 1.5
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+Counter({2: 1, 1: 1})
+Saving processed data to outputs/wizard_coder13B_test_subset_round2_data.csv
+Clustering N_CLUSTERS: 3
+{'data_path': 'outputs/wizard_coder13B_test_subset_round2_data.csv',
+ 'embedding_model': 'starencoder',
+ 'n_clusters': 3,
+ 'output_embed_file': 'outputs/wizard_coder13B_test_subset_round2_embeds.npy',
+ 'output_file': 'outputs/wizard_coder13B_test_subset_round2_3clusters.csv'}
+Loading embedding from outputs/wizard_coder13B_test_subset_round2_embeds.npy
+Embedding of shape (3, 768)
+Clustering...
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 67.71it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:76: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(all_num_clusters))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+Number of functions per problem:
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+
+number of set clusters:
+Counter({3: 2})
+DescribeResult(nobs=2, minmax=(3, 3), mean=3.0, variance=0.0, skewness=nan, kurtosis=nan)
+Number of util functions per problem:
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+REVISION ROUND 3
+MODULE FILE outputs/wizard_coder13B_test_subset_round2_3clusters.csv
+OUTPUT PATH: outputs/wizard_coder13B_test_subset_round3
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': 'outputs/wizard_coder13B_test_subset_round2_3clusters.csv',
+ 'num_clusters': 3,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round3',
+ 'prompt_file': 'prompts/codechain_revise.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+Distribution of number of utils:
+DescribeResult(nobs=2, minmax=(1, 2), mean=1.5, variance=0.5, skewness=0.0, kurtosis=-2.0)
+Counter({1: 1, 2: 1})
+Util functions for 2 problems
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 57260.12it/s]
+num_proc must be <= 2. Reducing num_proc to 2 for dataset of size 2.
+{'eval_split': 'test_subset',
+ 'example_test_path': 'data/test_example_tests.pkl',
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_round3',
+ 'save_results_path': 'outputs/wizard_coder13B_test_subset_round3_results_exampletests.json'}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 2
+    })
+    interview: Dataset({
+        features: [],
+        num_rows: 0
+    })
+    competition: Dataset({
+        features: [],
+        num_rows: 0
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=2):   0%|                                                                                                                                                                                                                                                                    | 0/2 [00:00<?, ? examples/s]Map (num_proc=2):  50%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                              | 1/2 [00:00<00:00,  1.41 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  2.62 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  2.10 examples/s]
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils_evaluate.py:128: RuntimeWarning: Mean of empty slice.
+  ).mean()
+/root/miniconda3/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Difficulty level: introductory, pass@k: {1: 0.6363636363636365, 5: 0.9393939393939394}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.6363636363636365, 5: 0.9393939393939394}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=2, minmax=(9, 11), mean=10.0, variance=2.0, skewness=0.0, kurtosis=-2.0)
+pass@1 0.6363636363636365 nan nan
+pass@5 0.9393939393939394 nan nan
+{'output_file': 'outputs/wizard_coder13B_test_subset_round3_data.csv',
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round3',
+ 'past_result_path': 'outputs/wizard_coder13B_test_subset_round2_data.csv_all_results.json',
+ 'result_path': 'outputs/wizard_coder13B_test_subset_round3_results_exampletests.json'}
+Number of data files: 2
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 523.90it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/processing.py:103: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(functions_per_problem))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+Number of generation samples: 
+DescribeResult(nobs=2, minmax=(3, 9), mean=6.0, variance=18.0, skewness=0.0, kurtosis=-2.0)
+Counter({9: 1, 3: 1})
+
+Average func per problem: 1.0
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Saving processed data to outputs/wizard_coder13B_test_subset_round3_data.csv
+Clustering N_CLUSTERS: 2
+{'data_path': 'outputs/wizard_coder13B_test_subset_round3_data.csv',
+ 'embedding_model': 'starencoder',
+ 'n_clusters': 2,
+ 'output_embed_file': 'outputs/wizard_coder13B_test_subset_round3_embeds.npy',
+ 'output_file': 'outputs/wizard_coder13B_test_subset_round3_2clusters.csv'}
+Loading embedding from outputs/wizard_coder13B_test_subset_round3_embeds.npy
+Embedding of shape (2, 768)
+Clustering...
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 71.04it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:67: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(num_funcs))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:76: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(all_num_clusters))
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:80: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(list(freqs.values())))
+Number of functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+
+number of set clusters:
+Counter({2: 2})
+DescribeResult(nobs=2, minmax=(2, 2), mean=2.0, variance=0.0, skewness=nan, kurtosis=nan)
+Number of util functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+REVISION ROUND 4
+MODULE FILE outputs/wizard_coder13B_test_subset_round3_2clusters.csv
+OUTPUT PATH: outputs/wizard_coder13B_test_subset_round4
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils.py:228: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(lens))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': 'outputs/wizard_coder13B_test_subset_round3_2clusters.csv',
+ 'num_clusters': 2,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round4',
+ 'prompt_file': 'prompts/codechain_revise.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+Distribution of number of utils:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Util functions for 2 problems
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 54648.91it/s]
+num_proc must be <= 2. Reducing num_proc to 2 for dataset of size 2.
+{'eval_split': 'test_subset',
+ 'example_test_path': 'data/test_example_tests.pkl',
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_round4',
+ 'save_results_path': 'outputs/wizard_coder13B_test_subset_round4_results_exampletests.json'}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 2
+    })
+    interview: Dataset({
+        features: [],
+        num_rows: 0
+    })
+    competition: Dataset({
+        features: [],
+        num_rows: 0
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=2):   0%|                                                                                                                                                                                                                                                                    | 0/2 [00:00<?, ? examples/s]Map (num_proc=2):  50%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                              | 1/2 [00:00<00:00,  1.33 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  2.40 examples/s]Map (num_proc=2): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.96 examples/s]
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils_evaluate.py:128: RuntimeWarning: Mean of empty slice.
+  ).mean()
+/root/miniconda3/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Difficulty level: introductory, pass@k: {1: 0.3416666666666667, 5: 0.7493686868686869}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.3416666666666667, 5: 0.7493686868686869}, num of examples: 2, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=2, minmax=(10, 12), mean=11.0, variance=2.0, skewness=0.0, kurtosis=-2.0)
+pass@1 0.3416666666666667 nan nan
+pass@5 0.7493686868686869 nan nan
+{'output_file': 'outputs/wizard_coder13B_test_subset_round4_data.csv',
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round4',
+ 'past_result_path': 'outputs/wizard_coder13B_test_subset_round3_data.csv_all_results.json',
+ 'result_path': 'outputs/wizard_coder13B_test_subset_round4_results_exampletests.json'}
+Number of data files: 2
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 864.09it/s]
+Number of generation samples: 
+DescribeResult(nobs=2, minmax=(1, 7), mean=4.0, variance=18.0, skewness=0.0, kurtosis=-2.0)
+Counter({1: 1, 7: 1})
+
+Average func per problem: 4.5
+DescribeResult(nobs=2, minmax=(1, 8), mean=4.5, variance=24.5, skewness=0.0, kurtosis=-2.0)
+Counter({1: 1, 8: 1})
+Saving processed data to outputs/wizard_coder13B_test_subset_round4_data.csv
+Clustering N_CLUSTERS: 1
+{'data_path': 'outputs/wizard_coder13B_test_subset_round4_data.csv',
+ 'embedding_model': 'starencoder',
+ 'n_clusters': 1,
+ 'output_embed_file': 'outputs/wizard_coder13B_test_subset_round4_embeds.npy',
+ 'output_file': 'outputs/wizard_coder13B_test_subset_round4_1clusters.csv'}
+Loading embedding from outputs/wizard_coder13B_test_subset_round4_embeds.npy
+Embedding of shape (9, 768)
+Clustering...
+  0%|                                                                                                                                                                                                                                                                                             | 0/2 [00:00<?, ?it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 66.43it/s]
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:76: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(all_num_clusters))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+/root/autodl-tmp/ew/CodeChain291a/src/clustering.py:80: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(list(freqs.values())))
+Number of functions per problem:
+DescribeResult(nobs=2, minmax=(1, 8), mean=4.5, variance=24.5, skewness=0.0, kurtosis=-2.0)
+
+number of set clusters:
+Counter({1: 2})
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Number of util functions per problem:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+REVISION ROUND 5
+MODULE FILE outputs/wizard_coder13B_test_subset_round4_1clusters.csv
+OUTPUT PATH: outputs/wizard_coder13B_test_subset_round5
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils.py:228: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  print(describe(lens))
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1418: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  sk = skew(a, axis, bias=bias)
+/root/miniconda3/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1419: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  kurt = kurtosis(a, axis, bias=bias)
+{'end': 20,
+ 'model': 'wizard_coder13B',
+ 'modules_file': 'outputs/wizard_coder13B_test_subset_round4_1clusters.csv',
+ 'num_clusters': 1,
+ 'num_gen_samples': 20,
+ 'output_path': 'outputs/wizard_coder13B_test_subset_round5',
+ 'prompt_file': 'prompts/codechain_revise.txt',
+ 'split': 'test_subset',
+ 'start': 0}
+Distribution of number of utils:
+DescribeResult(nobs=2, minmax=(1, 1), mean=1.0, variance=0.0, skewness=nan, kurtosis=nan)
+Counter({1: 2})
+Util functions for 2 problems
+  0%|                                                                                                                                                                                                                                                                                            | 0/20 [00:00<?, ?it/s]100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 62601.55it/s]

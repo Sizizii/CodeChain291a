@@ -1,0 +1,40 @@
+num_proc must be <= 10. Reducing num_proc to 10 for dataset of size 10.
+{'eval_split': 'test_subset',
+ 'example_test_path': None,
+ 'num_proc': 128,
+ 'original_gen_path': None,
+ 'save_gen_path': 'outputs/wizard_coder13B_test_subset_directgen',
+ 'save_results_path': None}
+Evaluation dataset:
+DatasetDict({
+    introductory: Dataset({
+        features: ['problem_id', 'question', 'solutions', 'input_output', 'difficulty', 'url', 'starter_code', 'gpt_codes', 'gen_file'],
+        num_rows: 10
+    })
+    interview: Dataset({
+        features: [],
+        num_rows: 0
+    })
+    competition: Dataset({
+        features: [],
+        num_rows: 0
+    })
+})
+# Samples from original (Round 0): 0
+Map (num_proc=10):   0%|                                                                                                                                                                                                                                                                  | 0/10 [00:00<?, ? examples/s]<string>:37: SyntaxWarning: 'generator' object is not subscriptable; perhaps you missed a comma?
+Map (num_proc=10):  10%|█████████████████████████                                                                                                                                                                                                                                 | 1/10 [00:00<00:04,  2.00 examples/s]Map (num_proc=10):  30%|███████████████████████████████████████████████████████████████████████████                                                                                                                                                                               | 3/10 [00:00<00:01,  5.47 examples/s]Map (num_proc=10):  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                             | 5/10 [00:00<00:00,  6.96 examples/s]Map (num_proc=10):  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                    | 6/10 [00:01<00:00,  6.47 examples/s]Map (num_proc=10):  80%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                  | 8/10 [00:01<00:00,  4.51 examples/s]Map (num_proc=10):  90%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                         | 9/10 [00:11<00:02,  2.47s/ examples]Map (num_proc=10): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:12<00:00,  2.25s/ examples]Map (num_proc=10): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:13<00:00,  1.30s/ examples]
+/root/autodl-tmp/ew/CodeChain291a/src/utils/utils_evaluate.py:128: RuntimeWarning: Mean of empty slice.
+  ).mean()
+/root/miniconda3/lib/python3.10/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Difficulty level: introductory, pass@k: {1: 0.0219298245614035, 5: 0.10964912280701755}, num of examples: 10, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+====================
+Difficulty level: introductory, pass@k: {1: 0.0219298245614035, 5: 0.10964912280701755}, num of examples: 10, total_cost: 0
+Difficulty level: interview, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Difficulty level: competition, pass@k: {1: nan, 5: nan}, num of examples: 0, total_cost: 0
+Number of outputs distributions:
+DescribeResult(nobs=10, minmax=(5, 19), mean=9.4, variance=19.822222222222223, skewness=0.9306774221797707, kurtosis=0.05858754449114212)
+pass@1 0.0219298245614035 nan nan
+pass@5 0.10964912280701755 nan nan
